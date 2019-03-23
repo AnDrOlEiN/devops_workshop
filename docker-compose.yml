@@ -5,10 +5,17 @@ services:
     build:
       context: services/app
       dockerfile: Dockerfile.development
-    command: sh -c "make start"
+    command: sh -c "rm -f /usr/src/app/tmp/pids/server.pid && make start"
     ports:
       - '4040:3000'
     volumes:
       - '~/.bash_history:/.bash_history'
       - './services/app:/usr/src/app:cached'
       - '/tmp:/tmp:delegated'
+  nginx:
+    build:
+      context: services/nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app
