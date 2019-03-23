@@ -4,4 +4,4 @@ version: '2'
       build:
         context: .
         dockerfile: Dockerfile.production
-      command: make test
+        command: make test
