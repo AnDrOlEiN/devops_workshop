@@ -1,5 +1,12 @@
-ansible_user: deploy
+ansible_user: me
+ansible_ssh_pass: "{{ vault_ansible_ssh_pass }}"
 ansible_python_interpreter: "/usr/bin/env python3"
+
+workshop_app_network: workshop_app_network
+catalor_user: me
+catalor_user_home: me
+app_catalog: "{{ catalor_user_home }}/workshop_app"
+env_file_catalog: "{{ app_catalog }}/.env"
 
 
 rack_env: production

@@ -1,1 +1,2 @@
-localhost ansible_connection=local
+[production]
+46.101.212.72
