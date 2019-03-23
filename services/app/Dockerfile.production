@@ -1,0 +1,14 @@
+FROM starefossen/ruby-node
+
+ENV PROJECT_ROOT /usr/src/app
+
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+
+RUN bundle install --path vendor/bundle
+
+WORKDIR $PROJECT_ROOT
+
+COPY . .
+
+RUN bundle exec rake assets:precompile
