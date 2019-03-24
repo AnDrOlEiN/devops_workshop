@@ -11,4 +11,6 @@ RUN bundle install --path vendor/bundle
 
 COPY . .
 
+RUN make setup
+
 RUN bundle exec rake assets:precompile
