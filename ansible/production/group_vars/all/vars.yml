@@ -9,6 +9,7 @@ app_catalog: "{{ catalor_user_home }}/workshop_app"
 env_file_catalog: "{{ app_catalog }}/.env"
 
 
+secret_key_base: "{{ valut_secret_key_base }}"
 rack_env: production
 rails_env: production
 rails_log_to_stdout: null

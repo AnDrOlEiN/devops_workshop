@@ -15,7 +15,7 @@
 
     - name: pull app
       docker_image:
-        name: "{{ app_catalog }}:{{ app_image_name }}"
+        name: "{{ app_image_name }}"
         force: yes
 
     - name: start app
@@ -24,7 +24,7 @@
         name: app
         state: started
         command: sh -c "make start"
-        image: "{{ app_catalog }}:{{ app_image_name }}"
+        image: "{{ app_image_name }}"
         env_file: "{{ env_file_catalog }}"
         exposed_ports:
           - 3000

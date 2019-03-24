@@ -1,10 +1,10 @@
 U := me
 
 production-setup:
-	ansible-playbook ansible/site.yml -i ansible/production --ask-become-pass
+	ansible-playbook ansible/site.yml -i ansible/production --ask-become-pass --ask-vault-pass
 
 production-env-update:
-	ansible-playbook ansible/site.yml -i ansible/production -u $U --tag env --ask-become-pass
+	ansible-playbook ansible/site.yml -i ansible/production -u $U --tag env --ask-become-pass --ask-vault-pass
 
 production-deploy:
 	ansible-playbook ansible/deploy.yml -i ansible/production -u $U --ask-vault-pass
