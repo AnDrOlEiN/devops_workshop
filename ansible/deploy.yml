@@ -23,6 +23,7 @@
         recreate: yes
         name: app
         state: started
+        restart_policy: always
         command: sh -c "make start"
         image: "{{ app_image_name }}"
         env_file: "{{ env_file_catalog }}"
@@ -37,6 +38,7 @@
         name: nginx
         image: "{{ nginx_image_name }}:latest"
         state: started
+        restart_policy: always
         networks:
           - name: "{{ workshop_app_network }}"
         ports:
