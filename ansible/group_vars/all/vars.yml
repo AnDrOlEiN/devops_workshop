@@ -1,3 +1,4 @@
 app_port: 3000
 app_image_name: "androlein/devops-workshop"
 nginx_image_name: "androlein/devops-workshop-nginx"
+do_token: "{{ vault_do_token }}"
