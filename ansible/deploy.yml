@@ -6,7 +6,7 @@
     - set_fact: app_image_name={{ app_image_name }}
       tags: always
 
-- hosts: production
+- hosts: all
   tasks:
     - name: pull nginx
       docker_image:
